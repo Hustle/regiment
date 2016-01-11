@@ -1,0 +1,27 @@
+{
+  "name": "regiment",
+  "version": "0.0.1",
+  "description": "NodeJS Cluster Wrapper (for graceful restarts)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hustleinc/regiment.git"
+  },
+  "keywords": [
+    "cluster",
+    "worker",
+    "process",
+    "restart",
+    "express",
+    "nodejs"
+  ],
+  "author": "Tyler Brock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HustleInc/regiment/issues"
+  },
+  "homepage": "https://github.com/HustleInc/regiment#README.md"
+}
