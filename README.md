@@ -50,7 +50,7 @@ var app = Express();
 app.use(Regiment.middleware.RequestCount(1000));   // Replace workers after every 1000 requests
 app.use(Regiment.middleware.MemoryFootprint(900)); // Replace workers after rss reaches 900mb
 
-Regiment(function(workerId) { return app.listen(); });          // default options options
+Regiment(function(workerId) { return app.listen(); });          // default options
 Regiment(function(workerId) { return app.listen(); }, options); // with options
 ```
 
