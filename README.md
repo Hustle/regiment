@@ -4,8 +4,6 @@ Regiment allows applications to **abuse** the NodeJS cluster module in order to 
 workers after a certain criteria is met. The goal is to keep the cluster working without dropping
 requests.
 
-I was inspired by @hunterloftis's Throng library and Forky.
-
 #### Why would you want this?
 
  - You have a leak in production and want your application to stay up while you figure out what is
@@ -68,3 +66,6 @@ Regiment(function(workerId) { return app.listen(); }, options); // with options
  give it a bit of a cushion for memory to balloon during the deadline (grace period).
  - A deadline (grace period) of 30 seconds is optimal for heroku. This is now the default.
 
+##### Thanks
+
+I was heavily inspired by @hunterloftis's Throng library and Forky.
