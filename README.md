@@ -6,8 +6,6 @@ requests.
 
 I was inspired by @hunterloftis's Throng library and Forky.
 
-> **WARNING** THIS IS AN INSANE WAY OF DEALING WITH MEMORY LEAKS (try to fix the leak if you can)
-
 #### Why would you want this?
 
  - You have a leak in production and want your application to stay up while you figure out what is
@@ -22,8 +20,8 @@ Workers use middleware to monitor for certain conditions like RSS size or reques
 criteria for replacement is met, a worker signals that it needs to be replaced by sending a message
 to the cluster.
 
-The cluster receives the message and spins up a new worker. When the new worker is up, the cluster
-sends a signal to the old worker which instructs it to not accept any new connections and to exit
+The cluster receives the message and spins up a new worker. The cluster listens for the new worker
+and sends a signal to the old worker which instructs it to not accept any new connections and to exit
 after servicing all current requests. The old worker is then disconnected from the cluster and
 receives no new requests.
 
