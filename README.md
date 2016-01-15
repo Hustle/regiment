@@ -21,9 +21,9 @@ criteria for replacement is met, a worker signals that it needs to be replaced b
 to the cluster.
 
 The cluster receives the message and spins up a new worker. The cluster listens for the new worker
-and sends a signal to the old worker which instructs it to not accept any new connections and to exit
-after servicing all current requests. The old worker is then disconnected from the cluster and
-receives no new requests.
+and sends a signal to the old worker which instructs it to not accept any new connections and to
+exit after servicing all current requests. The old worker is then disconnected from the cluster
+and receives no new requests.
 
  - Note: You can have up to 2x `numWorkers` when replacements come online but before the old
 ones gracefully die. This is temporary and *by design* as it drops back down to `numWorkers`.
