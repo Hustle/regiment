@@ -48,7 +48,7 @@ var Express = require('express');
 var app = Express();
 
 app.use(Regiment.middleware.RequestCount(1000));   // Replace workers after every 1000 requests
-app.use(Regiment.middleware.MemoryFootprint(900)); // Replace workers after rss reaches 900mb
+app.use(Regiment.middleware.MemoryFootprint(750)); // Replace workers after rss reaches 750mb
 
 Regiment(function(workerId) { return app.listen(); });          // default options
 Regiment(function(workerId) { return app.listen(); }, options); // with options
@@ -62,4 +62,11 @@ Regiment(function(workerId) { return app.listen(); }, options); // with options
   deadline: 5000, // Milliseconds to wait for worker to gracefully die before forcing death
 }
 ```
+
+##### Deployment Notes
+
+ - On Heroku we've found 750mb memory footprint for 1 worker to be a sweetspot for our application
+ on a 2x dyno where we account for startup memory usage of the replacement worker being ~100mb and
+ give it a bit of a cushion for memory to balloon during the deadline (grace period).
+ - A deadline (grace period) of 30 seconds is optimal for heroku. This is now the default.
 
