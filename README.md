@@ -1,8 +1,7 @@
 ## Regiment - Whip your cluster into shape!
 
-Regiment allows applications to **abuse** the NodeJS cluster module in order to seamlessly replace
-workers after certain criteria is met. The goal is to keep the cluster working without dropping
-requests.
+Regiment abuses the NodeJS cluster module in order to seamlessly replace workers after certain
+criteria is met. The goal is to keep the cluster up without dropping requests.
 
 #### Why would you want this?
 
