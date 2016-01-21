@@ -42,8 +42,9 @@ var Express = require('express');
 
 var app = Express();
 
-app.use(Regiment.middleware.RequestCount(1000));   // Replace workers after every 1000 requests
+// You can use either or both of the provided criteria middlewares, or contribute your own
 app.use(Regiment.middleware.MemoryFootprint(750)); // Replace workers after rss reaches 750mb
+app.use(Regiment.middleware.RequestCount(1000));   // Replace workers after every 1000 requests
 
 Regiment(function(workerId) { return app.listen(); });          // default options
 Regiment(function(workerId) { return app.listen(); }, options); // with options
