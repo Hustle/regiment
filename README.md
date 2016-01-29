@@ -32,7 +32,7 @@ for the worker to die by itself and then forcefully kill it.
 
 #### Installation
 ```sh
-npm install regiment
+npm install --save regiment
 ```
 
 #### Usage w/ Express
