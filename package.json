@@ -1,6 +1,6 @@
 {
   "name": "regiment",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NodeJS Cluster Wrapper for graceful restarts",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,9 @@
   ],
   "author": "Tyler Brock",
   "license": "MIT",
+  "engines": {
+    "node" : ">=4.0.0"
+  },
   "bugs": {
     "url": "https://github.com/HustleInc/regiment/issues"
   },
