@@ -66,7 +66,7 @@ for the worker to die by itself and then forcefully kill it.
  on a 2x dyno where we account for startup memory usage of the replacement worker being ~100mb and
  give it a bit of a cushion for memory to balloon during the deadline (grace period).
  - A deadline (grace period) of 30 seconds is optimal for heroku. This is now the default.
- - Requires Node >= 4.0.0
+ - Requires Node >= 6.0.0
 
 #### Thanks
 
